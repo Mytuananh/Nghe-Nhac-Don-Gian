@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>CREATE NEW MUSIC</h3>
+<p>
+    <a th:href="@{/music}">
+        Back to music list
+    </a>
+</p>
+<form th:action="@{/music/save}" method="POST" th:object="${musicForm}" enctype="multipart/form-data">
+    <div>
+            <span>
+        <label>Name:</label>
+            </span>
+        <span>
+            <input type="text" th:field="*{name}">
+        </span>
+    </div>
+    <div>
+            <span>
+                <label>Single:</label>
+            </span>
+        <span>
+                 <input type="text" th:field="*{single}">
+            </span>
+
+    </div>
+    <div>
+            <span>
+                <label>Link Music: </label>
+            </span>
+        <span>
+                 <input type="file" th:field="*{audio}">
+            </span>
+    </div>
+    <div>
+            <span>
+                 <label>Category:</label>
+            </span>
+        <span>
+                 <select th:field="*{category}" multiple>
+                <option value="Nhac tre">Nhac tre</option>
+                <option value="Nhac do">Nhac do</option>
+                <option value="Nhac vang">Nhac vang</option>
+                <option value="Nhac pop">Nhac pop</option>
+                <option value="Nhac ballad">Nhac ballad</option>
+            </select>
+           </span>
+    </div>
+    <div>
+            <span>
+                <input type="submit" value="save"/>
+            </span>
+
+    </div>
+</form>
+</body>
+</html>
