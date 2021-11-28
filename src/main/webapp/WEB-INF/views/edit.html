@@ -15,6 +15,11 @@
     <form th:action="@{/music/update}" method="POST" th:object="${musicForm}" enctype="multipart/form-data">
         <div>
             <span>
+                <input type="hidden" th:field="*{id}">
+            </span>
+        </div>
+        <div>
+            <span>
         <label>Name:</label>
             </span>
             <span>
@@ -35,6 +40,7 @@
                 <label>Link Music: </label>
             </span>
             <span>
+                <p th:text="${musicForm.getAudio().getOriginalFilename()}"></p>
                  <input type="file" th:field="*{audio}">
             </span>
         </div>

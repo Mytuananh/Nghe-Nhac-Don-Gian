@@ -12,6 +12,13 @@ public class MusicForm {
     public MusicForm() {
     }
 
+    public MusicForm(String name, String single, String category, MultipartFile audio) {
+        this.name = name;
+        this.single = single;
+        this.category = category;
+        this.audio = audio;
+    }
+
     public MusicForm(int id, String name, String single, String category, MultipartFile audio) {
         this.id = id;
         this.name = name;

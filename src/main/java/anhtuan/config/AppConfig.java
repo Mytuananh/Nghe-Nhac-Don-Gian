@@ -1,5 +1,7 @@
 package anhtuan.config;
 
+import anhtuan.service.IMusicService;
+import anhtuan.service.MusicService;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
@@ -44,6 +46,10 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
         templateEngine.setTemplateResolver(templateResolver());
         return templateEngine;
+    }
+    @Bean
+    public IMusicService musicService(){
+        return new MusicService();
     }
 
     @Bean

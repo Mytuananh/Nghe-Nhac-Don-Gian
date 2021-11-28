@@ -40,7 +40,7 @@ public class MusicService implements IMusicService {
 
     @Override
     public Music findOne(int id) {
-        String queryStr = "SELECT m FROM Music AS m WHERE m.id = :id";
+        String queryStr = "SELECT t FROM Music AS t WHERE t.id = :id";
         TypedQuery<Music> query = entityManager.createQuery(queryStr, Music.class);
         query.setParameter("id", id);
         return query.getSingleResult();

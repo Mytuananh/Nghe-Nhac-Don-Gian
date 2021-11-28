@@ -16,6 +16,13 @@ public class Music {
     public Music() {
     }
 
+    public Music(String name, String single, String category, String audio) {
+        this.name = name;
+        this.single = single;
+        this.category = category;
+        this.audio = audio;
+    }
+
     public Music(int id, String name, String single, String category, String audio) {
         this.id = id;
         this.name = name;
