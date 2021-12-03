@@ -66,7 +66,7 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/music/**")
                 .addResourceLocations("file:" + fileUpload);
-
+        System.out.println(fileUpload);
     }
 
     @Bean(name = "multipartResolver")
